@@ -92,7 +92,7 @@ To prevent SQL Injection vulnerabilities:
 
 ## 8. Evidence
 
-All screenshots of the testing process are included in the `screenshots` folder. These include:
+All screenshots of the testing process are included in the `Task 2` folder. These include:
 
 - Login page
 - Security configuration
