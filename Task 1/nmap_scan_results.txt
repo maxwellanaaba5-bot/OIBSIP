@@ -1,0 +1,71 @@
+====================================================================
+NMAP SCAN RESULTS - Task 1: Basic Network Scanning with Nmap
+====================================================================
+Analyst Machine : Kali Linux
+Target IP       : 192.168.1.122
+Network Subnet  : 192.168.1.0/24
+Interface       : eth0 (08:00:27:8a:35:d2)
+Nmap Version    : 7.99
+Scan Date/Time  : June 18, 2026 - 16:55 (UTC-4)
+IP Assignment   : Dynamic (DHCP)
+====================================================================
+
+--------------------------------------------------------------------
+STEP 1: Install Nmap
+--------------------------------------------------------------------
+$ sudo apt install nmap
+
+Reading package lists... Done
+Building dependency tree... Done
+nmap is already the newest version (7.99+dfsg-1kali1).
+Summary:
+  Upgrading: 0, Installing: 0, Removing: 0, Not upgrading: 1557
+
+--------------------------------------------------------------------
+STEP 2: Basic TCP Port Scan
+--------------------------------------------------------------------
+$ nmap 192.168.1.122
+
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-06-18 16:55 -0400
+Nmap scan report for 192.168.1.122
+Host is up (0.000062s latency).
+Not shown: 999 filtered tcp ports (no-response)
+PORT     STATE  SERVICE
+8080/tcp open   http-proxy
+
+Nmap done: 1 IP address (1 host up) scanned in 7.99 seconds
+
+--------------------------------------------------------------------
+STEP 3: Service Version Detection Scan
+--------------------------------------------------------------------
+$ nmap -sV 192.168.1.122
+
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-06-18 16:55 -0400
+Nmap scan report for 192.168.1.122
+Host is up (0.000065s latency).
+Not shown: 999 filtered tcp ports (no-response)
+PORT     STATE  SERVICE  VERSION
+8080/tcp open   http     SimpleHTTPServer 0.6 (Python 3.13.12)
+
+Service detection performed. Please report any incorrect results at
+https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 14.27 seconds
+
+====================================================================
+SUMMARY OF FINDINGS
+====================================================================
+Open Ports Found   : 1 (Port 8080/tcp)
+Service Identified  : Python SimpleHTTPServer 0.6 (HTTP)
+Filtered Ports      : 999 (firewall active - good posture)
+Encryption          : None (plain HTTP)
+Authentication       : None
+Overall Risk         : LOW in lab/test environment; HIGH if exposed
+                        in production
+Scan Scope           : Controlled lab environment - ethical,
+                        authorized testing only
+
+Note: This assessment was conducted in a controlled Kali Linux lab
+environment for educational purposes only. All scanning activity was
+performed on a local virtual machine with full authorization. No
+unauthorized systems were accessed.
+====================================================================
