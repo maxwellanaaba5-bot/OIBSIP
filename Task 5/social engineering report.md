@@ -1,7 +1,7 @@
 # Research Report: Social Engineering Attacks
 
 **Prepared for:** Oasis Infobyte Cybersecurity Internship
-**Author:** Apswin
+**Author:** Anaaba Maxwell Apuswini
 **Note:** This report was researched and drafted with the assistance of AI, then reviewed by the author.
 
 ---
